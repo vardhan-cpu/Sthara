@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details — Sthara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="property.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">Sthara</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#buy">Buy</a>
+                <a href="index.html#rent">Rent</a>
+                <a href="index.html#hourly" class="nav-hourly">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Hourly Hotels
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-proceed" id="proceedBtn" onclick="openAppModal()">Proceed to Sthara</button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Property Detail Content -->
+    <main class="property-detail" id="propertyDetail">
+        <!-- Back Button -->
+        <div class="detail-topbar">
+            <a href="index.html" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to listings
+            </a>
+            <div class="detail-actions">
+                <button class="action-btn" id="shareBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    Share
+                </button>
+                <button class="action-btn fav-btn" id="favBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    Save
+                </button>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery" id="imageGallery">
+            <div class="gallery-main">
+                <img src="" alt="" id="mainImage">
+                <span class="property-badge" id="detailBadge"></span>
+            </div>
+            <div class="gallery-side">
+                <div class="gallery-thumb" id="thumb1"><img src="" alt=""></div>
+                <div class="gallery-thumb" id="thumb2"><img src="" alt=""></div>
+            </div>
+        </div>
+
+        <!-- Property Content -->
+        <div class="detail-content">
+            <div class="detail-main">
+                <!-- Title & Location -->
+                <div class="detail-header">
+                    <div>
+                        <h1 class="detail-title" id="detailTitle"></h1>
+                        <p class="detail-location" id="detailLocation">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
+                            <span id="locationText"></span>
+                        </p>
+                    </div>
+                    <div class="detail-price-box">
+                        <span class="detail-price" id="detailPrice"></span>
+                        <span class="detail-price-note" id="detailPriceNote"></span>
+                    </div>
+                </div>
+
+                <!-- Quick Features -->
+                <div class="quick-features" id="quickFeatures"></div>
+
+                <!-- Highlights -->
+                <div class="detail-section">
+                    <h2>Property Highlights</h2>
+                    <div class="highlights-grid" id="highlightsGrid"></div>
+                </div>
+
+                <!-- Description -->
+                <div class="detail-section">
+                    <h2>About this Property</h2>
+                    <p class="detail-description" id="detailDescription"></p>
+                </div>
+
+                <!-- Amenities -->
+                <div class="detail-section">
+                    <h2>Amenities & Features</h2>
+                    <div class="amenities-grid" id="amenitiesGrid"></div>
+                </div>
+
+                <!-- Location Map Placeholder -->
+                <div class="detail-section">
+                    <h2>Location</h2>
+                    <div class="map-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
+                        <span id="mapLocationText"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="detail-sidebar">
+                <!-- Contact Card -->
+                <div class="contact-card">
+                    <h3>Interested in this property?</h3>
+                    <p>Get in touch with our team for a tour or more details.</p>
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <textarea placeholder="I'm interested in this property..." rows="3"></textarea>
+                        <button type="submit" class="btn-primary btn-full">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            Send Enquiry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Schedule Visit -->
+                <div class="schedule-card">
+                    <h3>Schedule a Visit</h3>
+                    <div class="schedule-slots">
+                        <button class="slot-btn">Today</button>
+                        <button class="slot-btn">Tomorrow</button>
+                        <button class="slot-btn">This Weekend</button>
+                    </div>
+                    <select class="time-select">
+                        <option>Select Time</option>
+                        <option>9:00 AM</option>
+                        <option>11:00 AM</option>
+                        <option>2:00 PM</option>
+                        <option>4:00 PM</option>
+                    </select>
+                    <button class="btn-outline-coral btn-full" id="scheduleBtn">Book Visit</button>
+                </div>
+
+                <!-- Safety Tips -->
+                <div class="safety-card">
+                    <div class="safety-icon">🛡️</div>
+                    <h4>Sthara Verified</h4>
+                    <p>This property has been verified by our team. All documents and ownership details checked.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sthara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Download Modal -->
+    <div class="modal-overlay" id="appModal">
+        <div class="app-modal">
+            <button class="modal-close" onclick="closeAppModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <img src="images/app-promo.png" alt="Sthara App Experience" class="modal-promo-img">
+                </div>
+                <div class="modal-right">
+                    <div class="modal-badge">📱 Mobile App</div>
+                    <h2>Get the <span class="modal-highlight">Sthara</span> App</h2>
+                    <p>Experience the future of real estate on your phone. Browse properties, book hourly hotels, and schedule visits — all from your pocket.</p>
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <span class="af-icon">⚡</span>
+                            <span>Instant Booking</span>
+                        </div>
+                        <div class="app-feature">
+                            <span class="af-icon">🔔</span>
+                            <span>Price Alerts</span>
+                        </div>
+                        <div class="app-feature">
+                            <span class="af-icon">🗺️</span>
+                            <span>AR Property Tours</span>
+                        </div>
+                    </div>
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn android-btn" onclick="event.preventDefault();">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 2.456l1.093-1.893a.3.3 0 00-.519-.3l-1.108 1.92A7.03 7.03 0 0012 1.11c-1.832 0-3.51.399-4.989 1.073L5.903.263a.3.3 0 00-.52.3l1.094 1.893C3.78 3.813 2 6.478 2 9.607h20c0-3.129-1.78-5.794-4.477-7.151zM7.5 7.607a1 1 0 110-2 1 1 0 010 2zm9 0a1 1 0 110-2 1 1 0 010 2zM2 10.607v9a2 2 0 002 2h1v3.5a1.5 1.5 0 003 0v-3.5h4v3.5a1.5 1.5 0 003 0v-3.5h1a2 2 0 002-2v-9H2z"/></svg>
+                            <div>
+                                <span class="dl-label">Get it on</span>
+                                <span class="dl-store">Google Play</span>
+                            </div>
+                        </a>
+                        <a href="#" class="download-btn ios-btn" onclick="event.preventDefault();">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.02.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            <div>
+                                <span class="dl-label">Download on the</span>
+                                <span class="dl-store">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="modal-note">Coming soon — Join the waitlist for early access!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="property.js"></script>
+</body>
+</html>

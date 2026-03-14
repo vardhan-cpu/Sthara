@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Properties — Sthara</title>
+    <meta name="description" content="Browse all properties available on Sthara — buy, rent, or book hourly hotel stays.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="listings.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">Sthara</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#buy">Buy</a>
+                <a href="index.html#rent">Rent</a>
+                <a href="index.html#hourly" class="nav-hourly">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Hourly Hotels
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-proceed" id="proceedBtn" onclick="openAppModal()">Proceed to Sthara</button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="listings-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Home
+            </a>
+            <h1 class="listings-title">All Properties</h1>
+            <p class="listings-subtitle">Explore our complete collection of properties — buy, rent, or book hourly stays.</p>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <button class="filter-pill active" data-filter="all">All</button>
+                <button class="filter-pill" data-filter="buy">Buy</button>
+                <button class="filter-pill" data-filter="rent">Rent</button>
+                <button class="filter-pill" data-filter="hourly">Hourly Hotels</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="listings-section">
+        <div class="container">
+            <div class="listings-grid" id="listingsGrid">
+                <!-- Cards are populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sthara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Download Modal -->
+    <div class="modal-overlay" id="appModal">
+        <div class="app-modal">
+            <button class="modal-close" onclick="closeAppModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <img src="images/app-promo.png" alt="Sthara App Experience" class="modal-promo-img">
+                </div>
+                <div class="modal-right">
+                    <div class="modal-badge">📱 Mobile App</div>
+                    <h2>Get the <span class="modal-highlight">Sthara</span> App</h2>
+                    <p>Experience the future of real estate on your phone. Browse properties, book hourly hotels, and schedule visits — all from your pocket.</p>
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <span class="af-icon">⚡</span>
+                            <span>Instant Booking</span>
+                        </div>
+                        <div class="app-feature">
+                            <span class="af-icon">🔔</span>
+                            <span>Price Alerts</span>
+                        </div>
+                        <div class="app-feature">
+                            <span class="af-icon">🗺️</span>
+                            <span>AR Property Tours</span>
+                        </div>
+                    </div>
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn android-btn" onclick="event.preventDefault();">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 2.456l1.093-1.893a.3.3 0 00-.519-.3l-1.108 1.92A7.03 7.03 0 0012 1.11c-1.832 0-3.51.399-4.989 1.073L5.903.263a.3.3 0 00-.52.3l1.094 1.893C3.78 3.813 2 6.478 2 9.607h20c0-3.129-1.78-5.794-4.477-7.151zM7.5 7.607a1 1 0 110-2 1 1 0 010 2zm9 0a1 1 0 110-2 1 1 0 010 2zM2 10.607v9a2 2 0 002 2h1v3.5a1.5 1.5 0 003 0v-3.5h4v3.5a1.5 1.5 0 003 0v-3.5h1a2 2 0 002-2v-9H2z"/></svg>
+                            <div>
+                                <span class="dl-label">Get it on</span>
+                                <span class="dl-store">Google Play</span>
+                            </div>
+                        </a>
+                        <a href="#" class="download-btn ios-btn" onclick="event.preventDefault();">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.02.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            <div>
+                                <span class="dl-label">Download on the</span>
+                                <span class="dl-store">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="modal-note">Coming soon — Join the waitlist for early access!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="listings.js"></script>
+</body>
+</html>
